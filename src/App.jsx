@@ -16,6 +16,7 @@ import Register from "./pages/PublicPages/Register";
 import AboutUs from "./pages/PublicPages/AboutUs";
 import CarNews from "./pages/PublicPages/CarNews";
 import ContactUs from "./pages/PublicPages/ContactUs";
+import CarDetails from "./pages/PublicPages/CarDetails";
 
 // User Pages
 import Dashboard from "./pages/UserPages/Dashboard";
@@ -40,16 +41,94 @@ const App = () => {
 
       <Routes>
         {/* Public routes - anyone can access */}
-        <Route path="/" element={<Layout><Home /> </Layout>} />
-        <Route path="/about" element={ <Layout><AboutUs /></Layout>} />
-        <Route path="/contact" element={ <Layout><ContactUs /></Layout>} />
-        <Route path="/login" element={  <Layout><Login /></Layout>}/>
-        <Route path="/register" element={ <Layout><Register /></Layout>}/>
-        <Route path="/newArrivals" element={ <Layout><NewArrival /></Layout>}/>
-        <Route path="/usedCars" element={ <Layout><UsedCars /> </Layout>}/>
-        <Route path="/services" element={ <Layout><Services /></Layout>}/>
-        <Route path="/reviews" element={ <Layout><Reviews /></Layout>}/>
-        <Route path="/carnews" element={  <Layout><CarNews /></Layout>}/>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Home />{" "}
+            </Layout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Layout>
+              <AboutUs />
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Layout>
+              <ContactUs />
+            </Layout>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Layout>
+              <Login />
+            </Layout>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Layout>
+              <Register />
+            </Layout>
+          }
+        />
+        <Route
+          path="/newArrivals"
+          element={
+            <Layout>
+              <NewArrival />
+            </Layout>
+          }
+        />
+        <Route
+          path="/carDetails"
+          element={
+            <Layout>
+              <CarDetails />
+            </Layout>
+          }
+        />
+        <Route
+          path="/usedCars"
+          element={
+            <Layout>
+              <UsedCars />{" "}
+            </Layout>
+          }
+        />
+        <Route
+          path="/services"
+          element={
+            <Layout>
+              <Services />
+            </Layout>
+          }
+        />
+        <Route
+          path="/reviews"
+          element={
+            <Layout>
+              <Reviews />
+            </Layout>
+          }
+        />
+        <Route
+          path="/carnews"
+          element={
+            <Layout>
+              <CarNews />
+            </Layout>
+          }
+        />
 
         {/* User routes - PROTECTED - need to be logged in */}
         <Route

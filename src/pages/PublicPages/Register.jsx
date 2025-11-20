@@ -24,7 +24,7 @@ const Register = () => {
       email: email,
       role: "user", // New registrations are regular users
     };
-    
+
     login(newUser);
     navigate("/dashboard");
   };
