@@ -4,21 +4,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Hero from "../../components/Hero";
 import audi_silver from "../../assets/New Arrivals/Audi-silver.jpg";
 import audi_white from "../../assets/New Arrivals/Audi-white.jpg";
-import benz_silver from "../../assets/New Arrivals/Benz-silver.jpg";
-import chev_black from "../../assets/New Arrivals/chev-truck-black.jpg";
-// import cybertruck from "../../assets/New Arrivals/cybertruck.jpg"
-import honda_blue from "../../assets/New Arrivals/Honda-Civic-blue.jpg";
-import masserrati_black from "../../assets/New Arrivals/masserrati-black.jpg";
-import ram_brown from "../../assets/New Arrivals/Ram-brown.jpg";
-// import romeo_silver from "../../assets/New Arrivals/Romeo-silver.jpg"
-// import tacoma_brown from "../../assets/New Arrivals/Tacoma-Brown.jpg"
-import tacoma_red from "../../assets/New Arrivals/Tacoma.jpg";
+import audi_dark from "../../assets/New Arrivals/audi-dark.jpg";
+import benz_black from "../../assets/New Arrivals/benz-black.jpg";
+import bmw_white from "../../assets/New Arrivals/bmw-white.jpg";
+import ram_black from "../../assets/New Arrivals/Ram-black.jpg";
+import romeo_black from "../../assets/New Arrivals/romeo-black.jpg"
+import rover_black from "../../assets/New Arrivals/rover-black.jpg"
+import range_silver from "../../assets/New Arrivals/range-silver.jpg";
 import fire_flame from "../../assets/fire-flame.png";
 
 //import car types
 // import suv from '../../assets/CarTypes/SUV.png'
 import suv from "../../assets/CarTypes/suv1.png";
 import hatch from "../../assets/CarTypes/hatch.png";
+import saloon from "../../assets/CarTypes/saloon-hand.png"
+import mini_truck from "../../assets/CarTypes/mini-truck.png"
+import big_truck from "../../assets/CarTypes/big-truck.png"
 
 const Home = () => {
   const slider = useRef();
@@ -65,7 +66,7 @@ const Home = () => {
     },
     {
       id: 3,
-      image: benz_silver,
+      image: benz_black,
       name: "Mercedes-Benz S-Class",
       price: "$95,000",
       year: "2024",
@@ -73,43 +74,51 @@ const Home = () => {
     },
     {
       id: 4,
-      image: chev_black,
-      name: "Chevrolet Silverado",
-      price: "$65,000",
+      image: bmw_white,
+      name: "BMW X5",
+      price: "$78,000",
       year: "2024",
-      mileage: "8,500 km",
+      mileage: "4,500 km",
     },
     {
       id: 5,
-      image: honda_blue,
-      name: "Honda Civic",
-      price: "$28,000",
+      image: audi_dark,
+      name: "Audi A6",
+      price: "$68,000",
       year: "2024",
-      mileage: "1,200 km",
+      mileage: "6,200 km",
     },
     {
       id: 6,
-      image: masserrati_black,
-      name: "Maserati Ghibli",
-      price: "$120,000",
+      image: ram_black,
+      name: "RAM 1500 Limited",
+      price: "$72,000",
       year: "2024",
-      mileage: "900 km",
+      mileage: "7,800 km",
     },
     {
       id: 7,
-      image: ram_brown,
-      name: "RAM 1500 Limited",
-      price: "$68,000",
+      image: romeo_black,
+      name: "Alfa Romeo Giulia",
+      price: "$65,000",
       year: "2024",
-      mileage: "12,000 km",
+      mileage: "3,500 km",
     },
     {
       id: 8,
-      image: tacoma_red,
-      name: "Toyota Tacoma TRD Pro",
-      price: "$54,000",
+      image: rover_black,
+      name: "Range Rover Sport",
+      price: "$98,000",
       year: "2024",
-      mileage: "6,800 km",
+      mileage: "2,100 km",
+    },
+    {
+      id: 9,
+      image: range_silver,
+      name: "Range Rover Evoque",
+      price: "$82,000",
+      year: "2024",
+      mileage: "4,800 km",
     },
   ];
 
@@ -267,29 +276,36 @@ const Home = () => {
           </div>
 
           <div className="car-types flex gap-6">
-            <div className="suv-container w-full h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+            <button className="suv-container w-full h-30 cursor-pointer bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+              <Link></Link>
               <img src={suv} alt="" width={175} />
               <span className="font-semibold">SUVs</span>
-            </div>
-            <div className="Hatchback-container relative w-full h-30 -20 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
-              <img src={hatch} alt="" width={177} className="mb-8" />
-              <p className="font-semibold absolute bottom-3">Hatchback</p>
-            </div>
-            <div className="saloon-container w-full h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
-              <img src="" alt="" width={175} />
+            </button>
+            <button className="Hatchback-container w-full cursor-pointer h-30 -20 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+              <Link></Link>
+              <img src={hatch} alt="" width={177} className="" />
+              <p className="font-semibold ">Hatchback</p>
+            </button>
+            <button className="saloon-container w-full cursor-pointer h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+              <Link></Link>
+              <img src={saloon} alt="" width={220} />
               <p className="font-semibold">Saloon</p>
-            </div>
-            <div className="MinTruck-container w-full h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
-              <img src="" alt="" width={175} />
+            </button>
+            <button className="MinTruck-container w-full cursor-pointer h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+              <Link></Link>
+              <img src={mini_truck} alt="" width={160} />
               <p className="font-semibold">Mini Truck</p>
-            </div>
-            <div className="BigTruck-container w-full h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
-              <img src="" alt="" width={175} />
+            </button>
+            <button className="BigTruck-container w-full cursor-pointer h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+              <Link></Link>
+              <img src={big_truck} alt="" width={140} />
               <p className="font-semibold">Big Truck</p>
-            </div>
+            </button>
           </div>
         </div>
       </div>
+
+      
     </div>
   );
 };
