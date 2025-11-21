@@ -17,8 +17,8 @@ import fire_flame from "../../assets/fire-flame.png";
 
 //import car types
 // import suv from '../../assets/CarTypes/SUV.png'
-import suv from '../../assets/CarTypes/suv1.png'
-import hatch from '../../assets/CarTypes/hatch.png'
+import suv from "../../assets/CarTypes/suv1.png";
+import hatch from "../../assets/CarTypes/hatch.png";
 
 const Home = () => {
   const slider = useRef();
@@ -268,11 +268,11 @@ const Home = () => {
 
           <div className="car-types flex gap-6">
             <div className="suv-container w-full h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
-              <img src={suv} alt="" width={175}  />
+              <img src={suv} alt="" width={175} />
               <span className="font-semibold">SUVs</span>
             </div>
             <div className="Hatchback-container relative w-full h-30 -20 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
-              <img src={hatch} alt="" width={177} className="mb-8"/>
+              <img src={hatch} alt="" width={177} className="mb-8" />
               <p className="font-semibold absolute bottom-3">Hatchback</p>
             </div>
             <div className="saloon-container w-full h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
