@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <div className="pt-20">
       {/* <h1>At your service!</h1> */}
-      <ComingSoon pageName="Services"/>
+      <ComingSoon pageName="Services" />
     </div>
   );
 };

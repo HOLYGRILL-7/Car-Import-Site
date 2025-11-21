@@ -5,7 +5,7 @@ const ContactUs = () => {
   return (
     <div className="pt-20">
       <h1>
-        <ComingSoon pageName="Contact"/>
+        <ComingSoon pageName="Contact" />
       </h1>
     </div>
   );

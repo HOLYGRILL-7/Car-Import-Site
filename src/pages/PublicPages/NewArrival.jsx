@@ -5,7 +5,7 @@ const NewArrival = () => {
   return (
     <div className="pt-20">
       <h1>
-        <ComingSoon pageName="New Arrivals"/>
+        <ComingSoon pageName="New Arrivals" />
       </h1>
     </div>
   );
