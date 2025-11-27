@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Car, Shield, Wrench, DollarSign, Package, Truck, Clock, Award, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
-  const [activeService, setActiveService] = useState(0);
+  // const [activeService, setActiveService] = useState(0);
 
   const services = [
     {
@@ -124,7 +124,7 @@ const Services = () => {
             <div
               key={index}
               className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:-translate-y-2"
-              onMouseEnter={() => setActiveService(index)}
+              // onMouseEnter={() => setActiveService(index)}
             >
               <div className={`h-2 bg-linear-to-r ${service.color}`}></div>
               
