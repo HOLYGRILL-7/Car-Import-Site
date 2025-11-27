@@ -8,8 +8,8 @@ import audi_dark from "../../assets/New Arrivals/audi-dark.jpg";
 import benz_black from "../../assets/New Arrivals/benz-black.jpg";
 import bmw_white from "../../assets/New Arrivals/bmw-white.jpg";
 import ram_black from "../../assets/New Arrivals/Ram-black.jpg";
-import romeo_black from "../../assets/New Arrivals/romeo-black.jpg"
-import rover_black from "../../assets/New Arrivals/rover-black.jpg"
+import romeo_black from "../../assets/New Arrivals/romeo-black.jpg";
+import rover_black from "../../assets/New Arrivals/rover-black.jpg";
 import range_silver from "../../assets/New Arrivals/range-silver.jpg";
 import fire_flame from "../../assets/fire-flame.png";
 
@@ -17,9 +17,16 @@ import fire_flame from "../../assets/fire-flame.png";
 // import suv from '../../assets/CarTypes/SUV.png'
 import suv from "../../assets/CarTypes/suv1.png";
 import hatch from "../../assets/CarTypes/hatch.png";
-import saloon from "../../assets/CarTypes/saloon-hand.png"
-import mini_truck from "../../assets/CarTypes/mini-truck.png"
-import big_truck from "../../assets/CarTypes/big-truck.png"
+import saloon from "../../assets/CarTypes/saloon-hand.png";
+import mini_truck from "../../assets/CarTypes/mini-truck.png";
+import big_truck from "../../assets/CarTypes/big-truck.png";
+
+//import car logos
+import Toyota from "../../assets/CarLogo/toyota.png"
+import Kia from "../../assets/CarLogo/KIA.png"
+import Nissan from "../../assets/CarLogo/Nissan.png"
+import Daewoo from "../../assets/CarLogo/Daewoo.png"
+import Chev from "../../assets/CarLogo/chev.png"
 
 const Home = () => {
   const slider = useRef();
@@ -122,6 +129,117 @@ const Home = () => {
     },
   ];
 
+  const carBrands = [
+    {
+      id: 1,
+      logo: Toyota,
+      name: "Toyota",
+    },
+    {
+      id: 2,
+      logo: Kia,
+      name: "Kia",
+    },
+    {
+      id: 3,
+      logo: Daewoo,
+      name: "Daewoo",
+    },
+    {
+      id: 4,
+      logo: Nissan,
+      name: "Nissan",
+      
+    },
+    {
+      id: 5,
+      logo: Chev,
+      name: "Chevrolet",
+    },
+  ];
+  const popularUsedBrands = [
+  {
+    id: 1,
+    name: "Used Toyota Corolla",
+  },
+  {
+    id: 2,
+    name: "Used Kia Sportage",
+  },
+  {
+    id: 3,
+    name: "Used Honda Civic",
+  },
+  {
+    id: 4,
+    name: "Used Nissan Rogue",
+  },
+  {
+    id: 5,
+    name: "Used Chevrolet Equinox",
+  },
+  {
+    id: 6,
+    name: "Used Toyota RAV4",
+  },
+  {
+    id: 7,
+    name: "Used Honda CR-V",
+  },
+  {
+    id: 8,
+    name: "Used Ford F-150",
+  },
+  {
+    id: 9,
+    name: "Used Toyota Camry",
+  },
+  {
+    id: 10,
+    name: "Used Mazda CX-5",
+  },
+  {
+    id: 11,
+    name: "Used Hyundai Tucson",
+  },
+  {
+    id: 12,
+    name: "Used Nissan Altima",
+  },
+  {
+    id: 13,
+    name: "Used Subaru Outback",
+  },
+  {
+    id: 14,
+    name: "Used Kia Sorento",
+  },
+  {
+    id: 15,
+    name: "Used Jeep Wrangler",
+  },
+  {
+    id: 16,
+    name: "Used BMW 3 Series",
+  },
+  {
+    id: 17,
+    name: "Used Mercedes-Benz C-Class",
+  },
+  {
+    id: 18,
+    name: "Used Audi Q5",
+  },
+  {
+    id: 19,
+    name: "Used Tesla Model 3",
+  },
+  {
+    id: 20,
+    name: "Used Chevrolet Silverado",
+  },
+];
+
   return (
     <div>
       <Hero />
@@ -176,7 +294,7 @@ const Home = () => {
                     className="shrink-0"
                     style={{ width: `${100 / newArrivals.length}%` }}
                   >
-                    <Link to="/carDetails" className="block group">
+                    <Link to="/carDetails" className="block group"> 
                       <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                         {/* Image */}
                         <div className="relative overflow-hidden h-64 p-4 ">
@@ -185,7 +303,7 @@ const Home = () => {
                             alt={car.name}
                             className="w-full h-full object-cover rounded-lg  transition-transform duration-500"
                           />
-                          <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             NEW
                           </div>
                         </div>
@@ -305,7 +423,51 @@ const Home = () => {
         </div>
       </div>
 
-      
+      <div className="py-14">
+        <div className="inner-div max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="header text-4xl font-bold text-gray-900">
+            Browse by car manufacturer
+          </h1>
+        </div>
+
+        <div className="py-14">
+          <ul className="flex flex-row justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {carBrands.map((brand) => (
+              <li className="">
+                <div className="flex flex-row items-center justify-center space-x-5 opacity-60">
+                  <img src={brand.logo} alt="" className="" width={35} />
+                  <h4 className="text text-black text-xl font-bold">{brand.name}</h4>
+                </div>
+                
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="py-14">
+        <div className="inner-div max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="header text-4xl font-bold text-gray-900">
+            Popular Used Car Models
+          </h1>
+        </div>
+
+        <div className="py-14">
+          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {popularUsedBrands.map((used) => (
+              <li className="">
+                <div>
+                  {/* flex flex-row items-center justify-center space-x-5 */}
+                  {/* <img src={brand.logo} alt="" className="" width={35} /> */}
+                  <button className="opacity-60 hover:opacity-100 hover:underline font-bold text-xl transition-opacity text-left w-full">
+                    <h4 className="text text-black text-xl font-bold">{used.name}</h4>
+                  </button>
+                </div>
+                
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

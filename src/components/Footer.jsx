@@ -1,15 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logoWhite from ".././assets/LOGO'S/logoWhite.png"
+
 
 const Footer = () => {
   return (
-    <footer className="bg-linear-to-r from-gray-900 to-black text-white mt-auto">
+    <footer className="bg-primary-dark text-white mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">AutoHub</h3>
-            <p className="text-gray-400 text-sm">
+            <div className="logo">
+            <Link
+              to="/"
+              className="transition-transform hover:scale-105"
+            >
+              <img src={ logoWhite}  alt="CarWise" width={130} />
+            </Link>
+            </div>
+
+            <p className="text-gray-400 text-sm mt-2">
               Your trusted partner for new and used cars. Quality vehicles at
               competitive prices.
             </p>
@@ -106,7 +116,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400 text-sm">
-          <p>&copy; 2024 AutoHub. All rights reserved.</p>
+          <p>&copy; 2024 CarWise. All rights reserved.</p>
         </div>
       </div>
     </footer>

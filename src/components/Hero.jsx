@@ -20,7 +20,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
         />
         {/* Fixed gradient class - was bg-linear-to-b, should be bg-gradient-to-b */}
-        <div className="absolute inset-0 bg-linear-to-b from-black/90 via-black/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-black via-black/80 to-transparent"></div>
       </div>
 
       {/* Foreground Content */}

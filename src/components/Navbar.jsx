@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/UseAuth";
+import logoWhite from ".././assets/LOGO'S/logoWhite.png"
+// import logoBlack from ".././assets/LOGO'S/blackbg-logo.png"
 
 const Navbar = () => {
   const { user, logout, isLoggedIn, isAdmin } = useAuth();
@@ -9,10 +11,8 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Check if we're on the homepage
   const isHomePage = location.pathname === "/";
 
-  // Scroll detection
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -27,7 +27,6 @@ const Navbar = () => {
     navigate("/");
   };
 
-  // Don't show navbar for admin users
   if (isLoggedIn() && isAdmin()) {
     return null;
   }
@@ -37,62 +36,61 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isHomePage && !isScrolled
           ? "bg-transparent"
-          : "bg-linear-to-r from-gray-900 to-black shadow-lg"
+          : "bg-primary-dark shadow-lg"  // Changed to primary navy
       }`}
     >
-      {/* Backdrop blur overlay for hero (only on homepage when not scrolled) */}
-      {/* //the second and acts like 'then' because JS checks if the previous values are true, then render the third value */}
-      {isHomePage && !isScrolled && <div className="absolute "></div>}
+      {/* Backdrop blur for transparency */}
+      {isHomePage && !isScrolled && (
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+      )}
 
       <div className="relative w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link
             to="/"
-            className={`text-xl sm:text-2xl font-bold transition-colors ${
-              isHomePage && !isScrolled
-                ? "text-blue-400 hover:text-blue-400"
-                : "text-blue-400 hover:text-blue-400"
-            }`}
+            className="transition-transform hover:scale-105"
           >
-            AutoHub
+            {/* <img src={logoBlack} alt="CarWise" width={130} /> */}
+            {/* <img src={isScrolled ? logoWhite : logoBlack} alt="CarWise" width={130} /> */}
+            <img src={ logoWhite}  alt="CarWise" width={130} />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex gap-8 text-lg">
             <Link
               to="/"
-              className="text-white hover:text-blue-400 transition-colors font-medium"
+              className="text-white hover:text-secondary-light transition-colors font-medium"  // Hover to red
             >
               Home
             </Link>
             <Link
               to="/newArrivals"
-              className="text-white hover:text-blue-400 transition-colors font-medium"
+              className="text-white hover:text-secondary-light transition-colors font-medium"
             >
-              New Arrivals
+              New Cars
             </Link>
             <Link
               to="/usedCars"
-              className="text-white hover:text-blue-400 transition-colors font-medium"
+              className="text-white hover:text-secondary-light transition-colors font-medium"
             >
               Used Cars
             </Link>
             <Link
               to="/services"
-              className="text-white hover:text-blue-400 transition-colors font-medium"
+              className="text-white hover:text-secondary-light transition-colors font-medium"
             >
               Services
             </Link>
             <Link
               to="/reviews"
-              className="text-white hover:text-blue-400 transition-colors font-medium"
+              className="text-white hover:text-secondary-light transition-colors font-medium"
             >
               Reviews
             </Link>
             <Link
               to="/about"
-              className="text-white hover:text-blue-400 transition-colors font-medium"
+              className="text-white hover:text-secondary-light transition-colors font-medium"
             >
               About
             </Link>
@@ -104,16 +102,16 @@ const Navbar = () => {
               <>
                 <Link
                   to="/dashboard"
-                  className="text-white hover:text-blue-400 transition-colors font-medium"
+                  className="text-white hover:text-secondary-light transition-colors font-medium"
                 >
                   Dashboard
                 </Link>
-                <span className="text-gray-300 border-l border-gray-700 pl-4">
+                <span className="text-neutral-light border-l border-neutral pl-4">
                   Welcome, <span className="font-semibold">{user.name}</span>
                 </span>
                 <button
                   onClick={handleLogout}
-                  className="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-lg font-medium transition-all text-white"
+                  className="bg-secondary hover:bg-secondary-dark px-5 py-2 rounded-lg font-medium transition-all text-white"  // Red button
                 >
                   Logout
                 </button>
@@ -128,7 +126,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/register"
-                  className="bg-blue-500 hover:bg-blue-700 text-white px-5 py-2 rounded-lg transition-all"
+                  className="bg-secondary hover:bg-secondary-dark text-white px-5 py-2 rounded-lg transition-all"  // Red register button
                 >
                   Register
                 </Link>
@@ -139,7 +137,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-white"
+            className="lg:hidden text-white hover:text-secondary-light transition-colors"
           >
             {mobileMenuOpen ? (
               <svg
@@ -175,46 +173,46 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-700">
+          <div className="lg:hidden py-4 border-t border-neutral">
             <div className="flex flex-col gap-4">
               <Link
                 to="/"
-                className="text-white hover:text-blue-400 transition-colors font-medium"
+                className="text-white hover:text-secondary-light transition-colors font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/newArrivals"
-                className="text-white hover:text-blue-400 transition-colors font-medium"
+                className="text-white hover:text-secondary-light transition-colors font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 New Arrivals
               </Link>
               <Link
                 to="/usedCars"
-                className="text-white hover:text-blue-400 transition-colors font-medium"
+                className="text-white hover:text-secondary-light transition-colors font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Used Cars
               </Link>
               <Link
                 to="/services"
-                className="text-white hover:text-blue-400 transition-colors font-medium"
+                className="text-white hover:text-secondary-light transition-colors font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
                 to="/reviews"
-                className="text-white hover:text-blue-400 transition-colors font-medium"
+                className="text-white hover:text-secondary-light transition-colors font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Reviews
               </Link>
               <Link
                 to="/about"
-                className="text-white hover:text-blue-400 transition-colors font-medium"
+                className="text-white hover:text-secondary-light transition-colors font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
@@ -224,12 +222,12 @@ const Navbar = () => {
                 <>
                   <Link
                     to="/dashboard"
-                    className="text-white hover:text-blue-400 transition-colors font-medium"
+                    className="text-white hover:text-secondary-light transition-colors font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Dashboard
                   </Link>
-                  <span className="text-gray-300">
+                  <span className="text-neutral-light">
                     Welcome, <span className="font-semibold">{user.name}</span>
                   </span>
                   <button
@@ -237,7 +235,7 @@ const Navbar = () => {
                       handleLogout();
                       setMobileMenuOpen(false);
                     }}
-                    className="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg font-medium transition-all text-left"
+                    className="bg-secondary hover:bg-secondary-dark text-white px-5 py-2 rounded-lg font-medium transition-all text-left"
                   >
                     Logout
                   </button>
@@ -253,7 +251,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     to="/register"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium transition-all text-center"
+                    className="bg-secondary hover:bg-secondary-dark text-white px-5 py-2 rounded-lg font-medium transition-all text-center"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Register
@@ -269,3 +267,27 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+// ### **Links:**
+// - `text-white` - Default state
+// - `hover:text-secondary-light` (Red#dc2626) - Hover state
+
+// ### **Buttons:**
+// - **Register/Logout:** `bg-secondary hover:bg-secondary-dark` (Red buttons)
+// - **Login:** Transparent with white text
+
+// ### **Borders:**
+// - `border-neutral` (Gray) - Mobile menu divider
+
+// ### **Text:**
+// - `text-neutral-light` - Welcome message
+
+// ---
+
+// ## **Visual Summary:**
+// ```
+// 🔵 Navy Background: bg-primary
+// 🔴 Red Hover/Buttons: text-secondary-light, bg-secondary
+// ⚪ White Text: text-white
+// ⚫ Gray Borders: border-neutral
