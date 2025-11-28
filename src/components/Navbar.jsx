@@ -60,37 +60,37 @@ const Navbar = () => {
           <div className="hidden lg:flex gap-8 text-lg">
             <Link
               to="/"
-              className="text-white hover:text-secondary-light transition-colors font-medium"  // Hover to red
+              className="text-white hover:text-primary-light transition-colors font-medium"  // Hover to red
             >
               Home
             </Link>
             <Link
               to="/newArrivals"
-              className="text-white hover:text-secondary-light transition-colors font-medium"
+              className="text-white hover:text-primary-light transition-colors font-medium"
             >
               New Cars
             </Link>
             <Link
               to="/usedCars"
-              className="text-white hover:text-secondary-light transition-colors font-medium"
+              className="text-white hover:text-primary-light transition-colors font-medium"
             >
               Used Cars
             </Link>
             <Link
               to="/services"
-              className="text-white hover:text-secondary-light transition-colors font-medium"
+              className="text-white hover:text-primary-light transition-colors font-medium"
             >
               Services
             </Link>
             <Link
               to="/reviews"
-              className="text-white hover:text-secondary-light transition-colors font-medium"
+              className="text-white hover:text-primary-light transition-colors font-medium"
             >
               Reviews
             </Link>
             <Link
               to="/about"
-              className="text-white hover:text-secondary-light transition-colors font-medium"
+              className="text-white hover:text-primary-light transition-colors font-medium"
             >
               About
             </Link>

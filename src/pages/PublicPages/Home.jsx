@@ -14,7 +14,6 @@ import range_silver from "../../assets/New Arrivals/range-silver.jpg";
 import fire_flame from "../../assets/fire-flame.png";
 
 //import car types
-// import suv from '../../assets/CarTypes/SUV.png'
 import suv from "../../assets/CarTypes/suv1.png";
 import hatch from "../../assets/CarTypes/hatch.png";
 import saloon from "../../assets/CarTypes/saloon-hand.png";
@@ -53,7 +52,7 @@ const Home = () => {
     slider.current.style.transform = `translateX(-${index * 25}%)`;
   };
 
-  // Sample car data - replace with your actual data
+  // Sample car data
   const newArrivals = [
     {
       id: 1,
@@ -130,122 +129,42 @@ const Home = () => {
   ];
 
   const carBrands = [
-    {
-      id: 1,
-      logo: Toyota,
-      name: "Toyota",
-    },
-    {
-      id: 2,
-      logo: Kia,
-      name: "Kia",
-    },
-    {
-      id: 3,
-      logo: Daewoo,
-      name: "Daewoo",
-    },
-    {
-      id: 4,
-      logo: Nissan,
-      name: "Nissan",
-      
-    },
-    {
-      id: 5,
-      logo: Chev,
-      name: "Chevrolet",
-    },
+    { id: 1, logo: Toyota, name: "Toyota" },
+    { id: 2, logo: Kia, name: "Kia" },
+    { id: 3, logo: Daewoo, name: "Daewoo" },
+    { id: 4, logo: Nissan, name: "Nissan" },
+    { id: 5, logo: Chev, name: "Chevrolet" },
   ];
+  
   const popularUsedBrands = [
-  {
-    id: 1,
-    name: "Used Toyota Corolla",
-  },
-  {
-    id: 2,
-    name: "Used Kia Sportage",
-  },
-  {
-    id: 3,
-    name: "Used Honda Civic",
-  },
-  {
-    id: 4,
-    name: "Used Nissan Rogue",
-  },
-  {
-    id: 5,
-    name: "Used Chevrolet Equinox",
-  },
-  {
-    id: 6,
-    name: "Used Toyota RAV4",
-  },
-  {
-    id: 7,
-    name: "Used Honda CR-V",
-  },
-  {
-    id: 8,
-    name: "Used Ford F-150",
-  },
-  {
-    id: 9,
-    name: "Used Toyota Camry",
-  },
-  {
-    id: 10,
-    name: "Used Mazda CX-5",
-  },
-  {
-    id: 11,
-    name: "Used Hyundai Tucson",
-  },
-  {
-    id: 12,
-    name: "Used Nissan Altima",
-  },
-  {
-    id: 13,
-    name: "Used Subaru Outback",
-  },
-  {
-    id: 14,
-    name: "Used Kia Sorento",
-  },
-  {
-    id: 15,
-    name: "Used Jeep Wrangler",
-  },
-  {
-    id: 16,
-    name: "Used BMW 3 Series",
-  },
-  {
-    id: 17,
-    name: "Used Mercedes-Benz C-Class",
-  },
-  {
-    id: 18,
-    name: "Used Audi Q5",
-  },
-  {
-    id: 19,
-    name: "Used Tesla Model 3",
-  },
-  {
-    id: 20,
-    name: "Used Chevrolet Silverado",
-  },
-];
+    { id: 1, name: "Used Toyota Corolla" },
+    { id: 2, name: "Used Kia Sportage" },
+    { id: 3, name: "Used Honda Civic" },
+    { id: 4, name: "Used Nissan Rogue" },
+    { id: 5, name: "Used Chevrolet Equinox" },
+    { id: 6, name: "Used Toyota RAV4" },
+    { id: 7, name: "Used Honda CR-V" },
+    { id: 8, name: "Used Ford F-150" },
+    { id: 9, name: "Used Toyota Camry" },
+    { id: 10, name: "Used Mazda CX-5" },
+    { id: 11, name: "Used Hyundai Tucson" },
+    { id: 12, name: "Used Nissan Altima" },
+    { id: 13, name: "Used Subaru Outback" },
+    { id: 14, name: "Used Kia Sorento" },
+    { id: 15, name: "Used Jeep Wrangler" },
+    { id: 16, name: "Used BMW 3 Series" },
+    { id: 17, name: "Used Mercedes-Benz C-Class" },
+    { id: 18, name: "Used Audi Q5" },
+    { id: 19, name: "Used Tesla Model 3" },
+    { id: 20, name: "Used Chevrolet Silverado" },
+  ];
 
   return (
-    <div>
+    <div className="">
       <Hero />
 
       {/* New Arrivals Section */}
-      <div className="py-14 mt-15 bg-gray-200">
+      <div className="py-14 mt-15 bg-neutral-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="flex items-center justify-between mb-10">
@@ -254,18 +173,18 @@ const Home = () => {
                 <img src={fire_flame} alt="" />
               </span>
               <div className="text space-y-1 text-lg">
-                <h2 className="text-4xl font-bold text-gray-900">
+                <h2 className="text-4xl font-bold text-primary">
                   New Arrivals
                 </h2>
-                <p>Say hello to the hottest deals on the market</p>
+                <p className="text-neutral">Say hello to the hottest deals on the market</p>
               </div>
             </div>
             <Link
               to="/newArrivals"
-              className="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-2 transition-colors"
+              className="text-accent hover:text-accent-light font-semibold flex items-center gap-2 transition-colors"
             >
               View All
-              <ChevronRight className="w-5 h-5 " />
+              <ChevronRight className="w-5 h-5" />
             </Link>
           </div>
 
@@ -275,10 +194,10 @@ const Home = () => {
             <button
               onClick={slideBackward}
               disabled={currentSlide === 0}
-              className="absolute left-0 shadow-4xl outline-1 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-blue-400 hover:bg-gray-100 rounded-full p-3  transition-all hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="absolute left-0 shadow-xl top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-accent hover:bg-accent-light rounded-full p-3 transition-all hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Previous"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-800" />
+              <ChevronLeft className="w-6 h-6 text-white" />
             </button>
 
             {/* Slider Wrapper */}
@@ -295,35 +214,35 @@ const Home = () => {
                     style={{ width: `${100 / newArrivals.length}%` }}
                   >
                     <Link to="/carDetails" className="block group"> 
-                      <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                      <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                         {/* Image */}
-                        <div className="relative overflow-hidden h-64 p-4 ">
+                        <div className="relative overflow-hidden h-64 p-4">
                           <img
                             src={car.image}
                             alt={car.name}
-                            className="w-full h-full object-cover rounded-lg  transition-transform duration-500"
+                            className="w-full h-full object-cover rounded-lg transition-transform duration-500"
                           />
-                          <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          <div className="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
                             NEW
                           </div>
                         </div>
 
                         {/* Card Content */}
                         <div className="p-6">
-                          <h3 className="text-xl font-bold text-gray-900 mb-2  group-hover:text-blue-600 transition-colors">
+                          <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">
                             {car.name}
                           </h3>
 
                           <div className="flex items-center justify-between mb-4">
-                            <span className="text-2xl font-bold text-blue-600">
+                            <span className="text-2xl font-bold text-accent">
                               {car.price}
                             </span>
-                            <span className="text-gray-500 text-sm">
+                            <span className="text-neutral text-sm">
                               {car.year}
                             </span>
                           </div>
 
-                          <div className="flex items-center justify-between text-sm text-gray-600 pt-4 border-t border-gray-100">
+                          <div className="flex items-center justify-between text-sm text-neutral pt-4 border-t border-neutral-light">
                             <span className="flex items-center gap-1">
                               <svg
                                 className="w-4 h-4"
@@ -340,7 +259,7 @@ const Home = () => {
                               </svg>
                               {car.mileage}
                             </span>
-                            <span className="text-blue-600 font-semibold group-hover:gap-2 flex items-center transition-all">
+                            <span className="text-accent font-semibold group-hover:gap-2 flex items-center transition-all">
                               View Details
                               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </span>
@@ -357,10 +276,10 @@ const Home = () => {
             <button
               onClick={slideForward}
               disabled={currentSlide === 3}
-              className="absolute right-0 top-1/2 -translate-y-1/2 shadow-4xl outline-1 translate-x-4 z-10 bg-blue-400 hover:bg-gray-100 rounded-full p-3 transition-all hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="absolute right-0 top-1/2 -translate-y-1/2 shadow-xl translate-x-4 z-10 bg-accent hover:bg-accent-light rounded-full p-3 transition-all hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Next"
             >
-              <ChevronRight className="w-6 h-6 text-gray-800 " />
+              <ChevronRight className="w-6 h-6 text-white" />
             </button>
           </div>
 
@@ -372,8 +291,8 @@ const Home = () => {
                 onClick={() => goToSlide(index)}
                 className={`w-2 h-2 rounded-full transition-all ${
                   currentSlide === index
-                    ? "bg-blue-600 w-8"
-                    : "bg-gray-300 hover:bg-gray-400"
+                    ? "bg-accent w-8"
+                    : "bg-neutral hover:bg-neutral-dark"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -382,87 +301,89 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="explore py-14  bg-gray-100">
+      {/* Explore Cars */}
+      <div className="explore py-14 bg-white">
         <div className="inner-div max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="Explore-Cars flex items-center justify-between mb-10">
             <div className="">
-              <h1 className="header text-4xl font-bold text-gray-900">
+              <h1 className="header text-4xl font-bold text-primary">
                 Explore Cars
               </h1>
-              <p>Browse by Car type</p>
+              <p className="text-neutral">Browse by Car type</p>
             </div>
           </div>
 
           <div className="car-types flex gap-6">
-            <button className="suv-container w-full h-30 cursor-pointer bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+            <button className="suv-container w-full h-30 cursor-pointer bg-neutral-light hover:bg-neutral-cream shadow-lg rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-xl transform hover:-translate-y-1">
               <Link></Link>
               <img src={suv} alt="" width={175} />
-              <span className="font-semibold">SUVs</span>
+              <span className="font-semibold text-primary">SUVs</span>
             </button>
-            <button className="Hatchback-container w-full cursor-pointer h-30 -20 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+            <button className="Hatchback-container w-full cursor-pointer h-30 bg-neutral-light hover:bg-neutral-cream shadow-lg rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-xl transform hover:-translate-y-1">
               <Link></Link>
               <img src={hatch} alt="" width={177} className="" />
-              <p className="font-semibold ">Hatchback</p>
+              <p className="font-semibold text-primary">Hatchback</p>
             </button>
-            <button className="saloon-container w-full cursor-pointer h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+            <button className="saloon-container w-full cursor-pointer h-30 bg-neutral-light hover:bg-neutral-cream shadow-lg rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-xl transform hover:-translate-y-1">
               <Link></Link>
               <img src={saloon} alt="" width={220} />
-              <p className="font-semibold">Saloon</p>
+              <p className="font-semibold text-primary">Saloon</p>
             </button>
-            <button className="MinTruck-container w-full cursor-pointer h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+            <button className="MinTruck-container w-full cursor-pointer h-30 bg-neutral-light hover:bg-neutral-cream shadow-lg rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-xl transform hover:-translate-y-1">
               <Link></Link>
               <img src={mini_truck} alt="" width={160} />
-              <p className="font-semibold">Mini Truck</p>
+              <p className="font-semibold text-primary">Mini Truck</p>
             </button>
-            <button className="BigTruck-container w-full cursor-pointer h-30 bg-white hover:bg-gray-200 shadow-lg rounded-lg flex flex-col items-center justify-center">
+            <button className="BigTruck-container w-full cursor-pointer h-30 bg-neutral-light hover:bg-neutral-cream shadow-lg rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-xl transform hover:-translate-y-1">
               <Link></Link>
               <img src={big_truck} alt="" width={140} />
-              <p className="font-semibold">Big Truck</p>
+              <p className="font-semibold text-primary">Big Truck</p>
             </button>
           </div>
         </div>
       </div>
 
-      <div className="py-14">
+      {/* Browse by Manufacturer */}
+      <div className="py-14 bg-neutral-light">
         <div className="inner-div max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="header text-4xl font-bold text-gray-900">
+          <h1 className="header text-4xl font-bold text-primary mb-2">
             Browse by car manufacturer
           </h1>
+          <p className="text-neutral text-lg mb-8">Explore vehicles from top brands</p>
         </div>
 
-        <div className="py-14">
+        <div className="py-10">
           <ul className="flex flex-row justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {carBrands.map((brand) => (
-              <li className="">
-                <div className="flex flex-row items-center justify-center space-x-5 opacity-60">
-                  <img src={brand.logo} alt="" className="" width={35} />
-                  <h4 className="text text-black text-xl font-bold">{brand.name}</h4>
+              <li key={brand.id} className="group cursor-pointer">
+                <div className="flex flex-row items-center justify-center space-x-5 opacity-60 hover:opacity-100 transition-opacity">
+                  <img src={brand.logo} alt={brand.name} className="" width={35} />
+                  <h4 className="text text-primary text-xl font-bold group-hover:text-accent transition-colors">{brand.name}</h4>
                 </div>
-                
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="py-14">
+
+      {/* Popular Used Cars */}
+      <div className="py-14 bg-white">
         <div className="inner-div max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="header text-4xl font-bold text-gray-900">
+          <h1 className="header text-4xl font-bold text-primary mb-2">
             Popular Used Car Models
           </h1>
+          <p className="text-neutral text-lg mb-8">Find the best deals on pre-owned vehicles</p>
         </div>
 
-        <div className="py-14">
+        <div className="py-10">
           <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {popularUsedBrands.map((used) => (
-              <li className="">
+              <li key={used.id} className="">
                 <div>
-                  {/* flex flex-row items-center justify-center space-x-5 */}
-                  {/* <img src={brand.logo} alt="" className="" width={35} /> */}
-                  <button className="opacity-60 hover:opacity-100 hover:underline font-bold text-xl transition-opacity text-left w-full">
-                    <h4 className="text text-black text-xl font-bold">{used.name}</h4>
+                  <button className="opacity-60 hover:opacity-100 hover:underline font-bold text-xl transition-all text-left w-full group">
+                    <h4 className="text text-primary text-xl font-bold group-hover:text-accent">{used.name}</h4>
                   </button>
                 </div>
-                
               </li>
             ))}
           </ul>
