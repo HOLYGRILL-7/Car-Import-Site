@@ -18,6 +18,11 @@ import CarNews from "./pages/PublicPages/CarNews";
 import ContactUs from "./pages/PublicPages/ContactUs";
 import CarDetails from "./pages/PublicPages/CarDetails";
 
+//About Pages
+import About from "./pages/AboutPages/About";
+import Team from "./pages/AboutPages/Team";
+import Press from "./pages/AboutPages/Press";
+
 // User Pages
 import Dashboard from "./pages/UserPages/Dashboard";
 import MyOrders from "./pages/UserPages/MyOrders";
@@ -49,14 +54,12 @@ const App = () => {
             </Layout>
           }
         />
-        <Route
-          path="/about"
-          element={
-            <Layout>
-              <AboutUs />
-            </Layout>
-          }
-        />
+       // ✅ BETTER - AboutUs handles its own layout
+<Route path="/about" element={<AboutUs />}>
+  <Route index element={<About />} />
+  <Route path="team" element={<Team />} />
+  <Route path="press" element={<Press />} />
+</Route>
         <Route
           path="/contact"
           element={
